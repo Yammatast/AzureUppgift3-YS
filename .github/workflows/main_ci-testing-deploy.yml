@@ -42,11 +42,6 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2869C2497C5A4D908E177C89F6F233EA }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1CDC510047924F00B3E8B10B549ED368 }}
 
-      - name: 'Run Azure Functions Action'
-        uses: Azure/functions-action@v1
-        id: fa
-        with:
-          app-name: 'CI-Testing-deploy'
-          slot-name: 'Production'
-          package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
+      - name: Check Website Availability
+        run: curl -f https://MyFunctionAppName.azurewebsites.net/api/CheckWebsiteFunction
           
