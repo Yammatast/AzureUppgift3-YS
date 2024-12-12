@@ -43,5 +43,5 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1CDC510047924F00B3E8B10B549ED368 }}
 
       - name: Check Website Availability
-        run: curl -f https://MyFunctionAppName.azurewebsites.net/api/CheckWebsiteFunction
+        run: curl -f https://ci-testing-deploy.azurewebsites.net/api/CheckWebsiteFunction?
           
